@@ -185,6 +185,7 @@ class QA_Backtest():
             elif self.market_type in [MARKET_TYPE.FUND_CN,
                                       MARKET_TYPE.INDEX_CN,
                                       MARKET_TYPE.FUTURE_CN]:
+                                      
                 self.market._settle(self.broker_name)
 
             self.broker.run(
@@ -212,7 +213,7 @@ class QA_Backtest():
                 print(ac.hold)
 
                 print(ac.history_table)
-        self.user.save()
+                ac.save()
         self.stop()
 
     def stop(self):
